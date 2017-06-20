@@ -58,6 +58,10 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
       list->head = list->head->next;  //move to next item to search
     }
       //succesfully found the name
+      if(list->head == list->tail){
+      //if data to be deleted is at the tail
+        list->tail = prevL;
+      }
       deleteHead = list->head;
       list->head = prevL;
 
