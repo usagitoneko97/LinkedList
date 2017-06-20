@@ -59,7 +59,7 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
     }
       //succesfully found the name
       //----------------------------
-      if(list->len == 2){
+      if(list->tail == list->head){
       //if data to be deleted is at the tail
         list->tail = prevL;
         deleteHead = list->head;
@@ -69,9 +69,17 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
         list->head = tempHead;//restore the head
         list->len--;
       }
+      else if (tempHead == list->head){
+        //if item to be deleted is head
+        tempHead = tempHead->next;  //move the head to the next 1
+        list->head = tempHead;  //restore the head
+        list->len --;
+      }
       else if (list->len == 1){
+        //if there is only 1 data
          ListInit(list);
-      }  
+      }
+      
       else{
       deleteHead = list->head;
       list->head = prevL;
