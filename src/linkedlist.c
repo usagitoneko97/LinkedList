@@ -39,11 +39,19 @@ Item* ListRemoveFirst(LinkedList *list){
     return NULL;
   }
   else{
+    if(list->head == list->tail){
+      //only 1 data
+      ListInit(list);
+    }
+    else{
     list->head = list->head->next;
+    list->len--;
+  }
   }
 }
 Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
   //preserve the head
+
   Item *prevL = NULL;
   Item *currL = list->head;
   if(list->head == NULL){
@@ -52,7 +60,7 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
     while(strcmp(((Student*)currL->data)->name, name) != 0 || currL == NULL){
       // prevL = currL;
       // currL = currL->next;
-      prevL = list->head;
+      prevL = currL;
       currL = currL->next;  //move to next item to search
     }
       //succesfully found the name
@@ -60,26 +68,24 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
       //currL = data to be deleted
       if(prevL == NULL){
         //data to be deleted is head
-        if(list->head == list->tail){
-          //only 1 data
-          list->head = NULL;
-          list->tail = NULL;
-          list->len = 0;
-        }
-        else{
-          //more than 1 data
-          currL = currL->next;
-          list->len --;
-        }
+        ListRemoveFirst(list);
       }
       else if(currL == list->tail){
         //data to be deletd is tail
-        prevL->next = currL->next;  //currL->next = NULL
         list->tail = prevL;
+        prevL->next = NULL;
         list->len--;
       }
-      currL = list->head;
-      list->head = currL;
+      else if(currL==NULL){
+        //wrong input of data
+        return NULL;
+      }
+      else{
+        //normal deletion
+        prevL->next = currL->next;
+        list->len--;
+      }
+
 
 
 

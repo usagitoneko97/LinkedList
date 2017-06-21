@@ -34,10 +34,17 @@ extern void test_Listlinit_ensure_initialize_to_NULL_and_0(void);
 extern void test_ListAdd_with_emptyList_(void);
 extern void test_ListAddLinkedList_2_addwith_1(void);
 extern void test_ListAddLinkedList_3_addwith_1(void);
-extern void test_removeFirstList(void);
-extern void test_removeLinkedList_ali_abu_baba_remove_abu_expect_ali_baba(void);
+extern void test_removeFirstList_ali_abu_baba_remove_ali_expect_abu_baba(void);
+extern void test_removeFirstList_ali_abu_remove_ali_expect_abu(void);
+extern void test_removeFirstList_ali_remove_ali_expect_NULL(void);
+extern void test_removeLinkedList_NULL_remove_ali_expect_NULL(void);
+extern void test_removeLinkedList_abu_baba_remove_wrong_name_expect_abu_baba(void);
+extern void test_removeLinkedList_ali_remove_ali_expect_NULL(void);
+extern void test_removeLinkedList_ali_abu_remove_ali_expect_abu(void);
 extern void test_removeLinkedList_ali_abu_remove_abu_expect_ali(void);
 extern void test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba(void);
+extern void test_removeLinkedList_ali_abu_baba_remove_abu_expect_ali_baba(void);
+extern void test_removeLinkedList_removeFirst_ali_abu_baba_remove_baba_expect_ali_abu(void);
 
 
 /*=======Test Reset Option=====*/
@@ -57,10 +64,17 @@ int main(void)
   RUN_TEST(test_ListAdd_with_emptyList_, 61);
   RUN_TEST(test_ListAddLinkedList_2_addwith_1, 82);
   RUN_TEST(test_ListAddLinkedList_3_addwith_1, 103);
-  RUN_TEST(test_removeFirstList, 123);
-  RUN_TEST(test_removeLinkedList_ali_abu_baba_remove_abu_expect_ali_baba, 136);
-  RUN_TEST(test_removeLinkedList_ali_abu_remove_abu_expect_ali, 148);
-  RUN_TEST(test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba, 161);
+  RUN_TEST(test_removeFirstList_ali_abu_baba_remove_ali_expect_abu_baba, 123);
+  RUN_TEST(test_removeFirstList_ali_abu_remove_ali_expect_abu, 137);
+  RUN_TEST(test_removeFirstList_ali_remove_ali_expect_NULL, 149);
+  RUN_TEST(test_removeLinkedList_NULL_remove_ali_expect_NULL, 162);
+  RUN_TEST(test_removeLinkedList_abu_baba_remove_wrong_name_expect_abu_baba, 174);
+  RUN_TEST(test_removeLinkedList_ali_remove_ali_expect_NULL, 191);
+  RUN_TEST(test_removeLinkedList_ali_abu_remove_ali_expect_abu, 205);
+  RUN_TEST(test_removeLinkedList_ali_abu_remove_abu_expect_ali, 221);
+  RUN_TEST(test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba, 238);
+  RUN_TEST(test_removeLinkedList_ali_abu_baba_remove_abu_expect_ali_baba, 256);
+  RUN_TEST(test_removeLinkedList_removeFirst_ali_abu_baba_remove_baba_expect_ali_abu, 272);
 
   return (UnityEnd());
 }
