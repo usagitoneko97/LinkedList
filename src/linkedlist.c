@@ -44,50 +44,43 @@ Item* ListRemoveFirst(LinkedList *list){
 }
 Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
   //preserve the head
-  Item* tempHead = list->head;
-  Item* deleteHead = NULL;
   Item *prevL = NULL;
+  Item *currL = list->head;
   if(list->head == NULL){
     return NULL;
   }
-  else{
-    while(strcmp(((Student*)list->head->data)->name, name) != 0 || list->head == NULL){
+    while(strcmp(((Student*)currL->data)->name, name) != 0 || currL == NULL){
       // prevL = currL;
       // currL = currL->next;
       prevL = list->head;
-      list->head = list->head->next;  //move to next item to search
+      currL = currL->next;  //move to next item to search
     }
       //succesfully found the name
       //----------------------------
-      if(list->tail == list->head){
-      //if data to be deleted is at the tail
+      //currL = data to be deleted
+      if(prevL == NULL){
+        //data to be deleted is head
+        if(list->head == list->tail){
+          //only 1 data
+          list->head = NULL;
+          list->tail = NULL;
+          list->len = 0;
+        }
+        else{
+          //more than 1 data
+          currL = currL->next;
+          list->len --;
+        }
+      }
+      else if(currL == list->tail){
+        //data to be deletd is tail
+        prevL->next = currL->next;  //currL->next = NULL
         list->tail = prevL;
-        deleteHead = list->head;
-        list->head = prevL;
-
-        list->head->next = deleteHead->next;  //deleting the data
-        list->head = tempHead;//restore the head
         list->len--;
       }
-      else if (tempHead == list->head){
-        //if item to be deleted is head
-        tempHead = tempHead->next;  //move the head to the next 1
-        list->head = tempHead;  //restore the head
-        list->len --;
-      }
-      else if (list->len == 1){
-        //if there is only 1 data
-         ListInit(list);
-      }
+      currL = list->head;
+      list->head = currL;
 
-      else{
-      deleteHead = list->head;
-      list->head = prevL;
 
-      list->head->next = deleteHead->next;  //deleting the data
-      list->head = tempHead;//restore the head
-      list->len--;
-      }
 
-  }
 }

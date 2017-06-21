@@ -18,20 +18,20 @@
 - :test: test_removeFirstList
   :line: 123
   :message: ''
-- :test: test_removeLinkedList_ali_abu_baba_remove_abu_expect_ali_baba
-  :line: 136
-  :message: ''
 - :test: test_removeLinkedList_ali_abu_remove_abu_expect_ali
   :line: 148
   :message: ''
 - :test: test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba
   :line: 161
   :message: ''
-:failures: []
+:failures:
+- :test: test_removeLinkedList_ali_abu_baba_remove_abu_expect_ali_baba
+  :line: 143
+  :message: Expected 0x0040624C Was 0x0040636C
 :ignores: []
 :counts:
   :total: 8
-  :passed: 8
-  :failed: 0
+  :passed: 7
+  :failed: 1
   :ignored: 0
 :stdout: []
