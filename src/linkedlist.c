@@ -51,7 +51,7 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
     return NULL;
   }
   else{
-    while(strcmp(((Student*)list->head->data)->name, name) != 0 || prevL == NULL){
+    while(strcmp(((Student*)list->head->data)->name, name) != 0 || list->head == NULL){
       // prevL = currL;
       // currL = currL->next;
       prevL = list->head;
@@ -79,7 +79,7 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
         //if there is only 1 data
          ListInit(list);
       }
-      
+
       else{
       deleteHead = list->head;
       list->head = prevL;

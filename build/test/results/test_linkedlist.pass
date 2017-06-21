@@ -24,11 +24,14 @@
 - :test: test_removeLinkedList_ali_abu_remove_abu_expect_ali
   :line: 148
   :message: ''
+- :test: test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba
+  :line: 161
+  :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 7
-  :passed: 7
+  :total: 8
+  :passed: 8
   :failed: 0
   :ignored: 0
 :stdout: []

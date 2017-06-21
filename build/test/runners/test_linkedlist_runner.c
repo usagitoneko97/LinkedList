@@ -37,6 +37,7 @@ extern void test_ListAddLinkedList_3_addwith_1(void);
 extern void test_removeFirstList(void);
 extern void test_removeLinkedList_ali_abu_baba_remove_abu_expect_ali_baba(void);
 extern void test_removeLinkedList_ali_abu_remove_abu_expect_ali(void);
+extern void test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba(void);
 
 
 /*=======Test Reset Option=====*/
@@ -59,6 +60,7 @@ int main(void)
   RUN_TEST(test_removeFirstList, 123);
   RUN_TEST(test_removeLinkedList_ali_abu_baba_remove_abu_expect_ali_baba, 136);
   RUN_TEST(test_removeLinkedList_ali_abu_remove_abu_expect_ali, 148);
+  RUN_TEST(test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba, 161);
 
   return (UnityEnd());
 }

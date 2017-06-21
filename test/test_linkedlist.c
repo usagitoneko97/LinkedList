@@ -151,8 +151,18 @@ void test_removeLinkedList_ali_abu_remove_abu_expect_ali(void){
   ListAddLinkedList(&list, &itemAli);
   ListAddLinkedList(&list, &itemAbu);
   ListRemoveLinkedListByName("abu", &list);
-  TEST_ASSERT_EQUAL(&itemAli, list.head);
+
+  TEST_ASSERT_EQUAL_PTR(&itemAli, list.head);
   TEST_ASSERT_NULL(itemAli.next);
 
   TEST_ASSERT_EQUAL(1, list.len);
+}
+
+void test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba(void){
+  LinkedList list;
+  ListInit(&list);
+  ListAddLinkedList(&list, &itemAli);
+  ListAddLinkedList(&list, &itemAbu);
+  ListAddLinkedList(&list, &itemBaba);
+  
 }

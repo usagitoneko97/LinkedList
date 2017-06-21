@@ -419,17 +419,19 @@ void test_removeLinkedList_ali_abu_remove_abu_expect_ali(void){
 
   ListRemoveLinkedListByName("abu", &list);
 
-  UnityAssertEqualNumber((UNITY_INT)((&itemAli)), (UNITY_INT)((list.head)), (
+
+
+  UnityAssertEqualNumber((UNITY_INT32)((&itemAli)), (UNITY_INT32)((list.head)), (
 
  ((void *)0)
 
- ), (UNITY_UINT)(154), UNITY_DISPLAY_STYLE_INT);
+ ), (UNITY_UINT)(155), UNITY_DISPLAY_STYLE_HEX32);
 
   if ((((itemAli.next)) == 
 
  ((void *)0)
 
- )) {} else {UnityFail( (((" Expected NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(155))));};
+ )) {} else {UnityFail( (((" Expected NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(156))));};
 
 
 
@@ -437,6 +439,24 @@ void test_removeLinkedList_ali_abu_remove_abu_expect_ali(void){
 
  ((void *)0)
 
- ), (UNITY_UINT)(157), UNITY_DISPLAY_STYLE_INT);
+ ), (UNITY_UINT)(158), UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void test_removeLinkedList_removeFirst_ali_abu_baba_remove_ali_expect_abu_baba(void){
+
+  LinkedList list;
+
+  ListInit(&list);
+
+  ListAddLinkedList(&list, &itemAli);
+
+  ListAddLinkedList(&list, &itemAbu);
+
+  ListAddLinkedList(&list, &itemBaba);
+
+
 
 }
