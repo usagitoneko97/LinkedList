@@ -66,6 +66,12 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
       //succesfully found the name
       //----------------------------
       //currL = data to be deleted
+    if(currL == NULL){
+      //wrong input of name
+      return NULL;
+    }
+    else
+    {
       if(prevL == NULL){
         //data to be deleted is head
         ListRemoveFirst(list);
@@ -76,17 +82,13 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
         prevL->next = NULL;
         list->len--;
       }
-      else if(currL==NULL){
-        //wrong input of data
-        return NULL;
-      }
+    
       else{
         //normal deletion
         prevL->next = currL->next;
         list->len--;
       }
-
-
-
+      
+    }
 
 }
