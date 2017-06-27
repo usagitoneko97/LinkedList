@@ -57,12 +57,16 @@ Item* ListRemoveLinkedListByName(char* name, LinkedList *list){
   if(list->head == NULL){
     return NULL;
   }
-    while(strcmp(((Student*)currL->data)->name, name) != 0 || currL == NULL){
+    while(strcmp(((Student*)currL->data)->name, name) != 0){
       // prevL = currL;
       // currL = currL->next;
-      prevL = currL;
-      currL = currL->next;  //move to next item to search
+    prevL = currL;
+    currL = currL->next;  //move to next item to search
+    if(currL == NULL){
+      //no data found
+      return NULL;
     }
+  }
       //succesfully found the name
       //----------------------------
       //currL = data to be deleted
